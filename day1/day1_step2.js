@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const input = fs.readFileSync('./day1.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
+const input = fs.readFileSync('day1/day1.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
 
 const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 const digits = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];

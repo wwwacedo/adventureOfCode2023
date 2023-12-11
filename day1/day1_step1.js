@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const input = fs.readFileSync('./day1.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
+const input = fs.readFileSync('day1/day1.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
 
 let allStringsSplitado = input.map(string => string.split(""));
 

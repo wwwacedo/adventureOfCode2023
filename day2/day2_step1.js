@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const input = fs.readFileSync('./day2.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
+const input = fs.readFileSync('day2/day2.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
 
 const RED = 12;
 const GREEN = 13;

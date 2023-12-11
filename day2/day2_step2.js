@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const input = fs.readFileSync('./day2.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
+const input = fs.readFileSync('day2/day2.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
 
 const regex = /Game ([0-9][0-9]?|[2-9][0-9]?|100):/g;
 

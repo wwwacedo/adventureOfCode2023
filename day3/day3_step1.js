@@ -9,7 +9,7 @@
 
 import fs from 'fs';
 
-const input = fs.readFileSync('./day3.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
+const input = fs.readFileSync('day3/day3.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
 
 const numbers = [];
 const especial = [];
