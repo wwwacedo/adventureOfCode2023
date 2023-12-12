@@ -2,9 +2,10 @@ import fs from 'fs';
 
 const input = fs.readFileSync('day3/day3.txt', { encoding: 'utf8', flag: 'r' }).split('\n');
 
+const EXACT_NUMBER_OF_GEARS = 2;
 const numbers = [];
-const especial = [];
-let selected = [];
+const gears = [];
+const gear_ratios = [];
 
 input.forEach((line, index) => {
 	for (let i = 0; i < line.length; i++) {
@@ -29,37 +30,32 @@ input.forEach((line, index) => {
 	}
 })
 
-// console.log(numbers);
-
 input.forEach((line, index) => {
 	for (let i = 0; i < line.length; i++) {
-		if(isNaN(line[i]) && line[i] !== '.') {
-			especial.push({ line: index, position: i, caracter: line[i] });
+		if(line[i] === '*') {
+			gears.push({ line: index, position: i });
 		}
 	}
 })
 
-// console.log(especial);
-
-especial.forEach(item => {
-	const { line, position, caracter } = item;
+gears.forEach(item => {
+	const { line, position } = item;
+	const parts = [];
 	numbers
 		.filter(item => item.line === line - 1 || item.line === line || item.line === line + 1)
 		.forEach(item => {
 			for(let i = item.initial; i <= item.final; i++) {
 				if(i === position - 1 || i === position || i === position + 1) {
-					selected.push(item);
+					parts.push(item);
 					break;
 				}
 			}
 		})
+	if(parts.length === EXACT_NUMBER_OF_GEARS) {
+		const numbers = parts.map(item => Number(item.number));
+		gear_ratios.push(numbers[0] * numbers[1]);
+	}
 })
 
-selected = [...new Set(selected)];
-
-// console.log(selected);
-
-selected = selected.map(item => Number(item.number));
-
-console.log(selected.reduce((acc, item) => acc + item, 0));
+console.log(gear_ratios.reduce((acc, item) => acc + item, 0));
 
